@@ -1,0 +1,76 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 01.07.2015, 02:09:55
+    Author     : karlsve
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100vw;
+    max-width: 100%;
+}
+
+body {
+    padding-top: 60px;
+}
+
+.navbar-fixed-bottom {
+    padding-right: 10px;
+}
+
+.input-group-btn select.btn-default {
+    border-color: #ccc;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.panel {
+    padding: 0px;
+}
+
+.panel>.table {
+    width: 100%;
+}
+
+.table.table-league-data td:last-child, .table.table-league-data th:last-child:last-child {
+    text-align: right;
+}
+
+.table.table-league-data td, .table.table-league-data th {
+    width: 50%;
+}
+
+.page {
+    margin-bottom: 70px;
+}
+
+.panel-group::after, .panel-group::before {
+    content: '';
+    display: table;
+    line-height: 0;
+    height: 0px;
+    width: 0px;
+    clear: both;
+}
+
+a.block {
+    display: block;
+    padding: 5px;
+}
+
+canvas.chart {
+    width: 100%;
+}
+
+.input-group-league {
+    margin-bottom: 30px;
+}
