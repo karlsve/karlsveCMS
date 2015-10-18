@@ -9,10 +9,6 @@ namespace components\debug {
     }
 
     function error_handler($errno, $errstr, $errfile, $errline) {
-        if (!(error_reporting() & $errno)) {
-            // This error code is not included in error_reporting
-            return;
-        }
         Debug::addError(new Error($errno, $errstr, $errfile, $errline));
     }
 

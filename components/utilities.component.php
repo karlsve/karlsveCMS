@@ -6,8 +6,7 @@ namespace components\utilites {
 
         public static function remove_utf8_bom($text) {
             $bom = pack('H*', 'EFBBBF');
-            $text = preg_replace("/^$bom/", '', $text);
-            return $text;
+            return preg_replace("/^$bom/", '', $text);
         }
 
     }
@@ -41,19 +40,48 @@ namespace components\utilites {
 
     abstract class CURL {
 
-        public static function url_get_contents($url) {
+        public static function url_get_contents($url, $debug = false) {
             if (!function_exists('curl_init')) {
                 die('CURL is not installed!');
             }
             $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_HEADER, true);
 
             $output = curl_exec($ch);
+            if ($debug) {
+                $curlinfo = curl_getinfo($ch);
+                /** Blurring the local information, cuz its none of their business! **/
+                $curlinfo['local_ip'] = '133.713.371.337';
+                $curlinfo['local_port'] = '133.713.371.337';
+                trigger_error(Prettify::dump($curlinfo), E_USER_ERROR);
+            }
+            $httpcode = intval(curl_getinfo($ch, CURLINFO_HTTP_CODE));
+            if ($httpcode != 200) {
+                trigger_error("HTTP Status Code: {$httpcode}");
+            }
             if (curl_errno($ch)) {
                 trigger_error(curl_error($ch));
             }
             curl_close($ch);
-            return $output;
+            return preg_replace('|.*?[\n\r]|', '', $output);
+        }
+
+    }
+
+    abstract class Prettify {
+
+        public static function dump($var, $force_var_dump = false) {
+            ob_start();
+            print_r($var);
+            $print = ob_get_clean();
+            if (empty($print) || $force_var_dump) {
+                ob_start();
+                var_dump($var);
+                return ob_get_clean();
+            }
+            return $print;
         }
 
     }

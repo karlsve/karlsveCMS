@@ -35,6 +35,7 @@ body {
 
 .panel {
     padding: 0px;
+    position: relative;
 }
 
 .panel>.table {
@@ -73,4 +74,16 @@ canvas.chart {
 
 .input-group-league {
     margin-bottom: 30px;
+}
+
+.panel>table.table {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    overflow-x: scroll;
+}
+
+.panel>table.table>tbody {
+    width: 100%;
+    max-width: 100%;
 }

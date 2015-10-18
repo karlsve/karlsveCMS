@@ -1,7 +1,7 @@
 <?php
 if (\components\debug\Debug::hasErrors()):
     ?>
-    <div class="container-fluid col-xs-12 col-md-8 col-md-offset-2">
+    <div class="page container-fluid col-xs-12 col-md-8 col-md-offset-2">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3>Debug</h3>
@@ -20,7 +20,7 @@ if (\components\debug\Debug::hasErrors()):
                     ?>
                     <tr>
                         <td><?php echo $error->getNumber(); ?></td>
-                        <td><?php echo $error->getString(); ?></td>
+                        <td><pre><?php echo $error->getString(); ?></pre></td>
                         <td><?php echo $error->getFile(); ?></td>
                         <td><?php echo $error->getLine(); ?></td>
                     </tr>

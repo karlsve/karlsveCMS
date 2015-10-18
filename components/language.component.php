@@ -50,8 +50,19 @@ namespace components\language {
             }
             if (self::hasTranslation($key, $language)) {
                 return self::$translations[$language][$key];
+            } else {
+                return self::translateGlobal($key);
             }
             return $key;
+        }
+
+        public static function translateGlobal($key) {
+            foreach(self::$translations as $language) {
+                if(key_exists($key, $language)) {
+                    return $language[$key];
+                }
+            }
+            return false;
         }
 
     }

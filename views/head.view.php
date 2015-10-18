@@ -16,4 +16,6 @@
     
     <!-- Custom CSS -->
     <link href="resources/css/style.css" rel="stylesheet">
+    <!-- GalleryJS -->
+    <link href="resources/css/galleryJS.css" rel="stylesheet">
 </head>

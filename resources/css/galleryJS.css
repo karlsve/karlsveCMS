@@ -1,0 +1,125 @@
+a[data-type="gallery-thumbnail"] {
+    display: block;
+}
+
+a[data-type="gallery-thumbnail"]::before, a[data-type="gallery-thumbnail"]::after {
+    content: '';
+    display: table;
+    line-height: 0;
+    height: 0px;
+    width: 0px;
+    clear: both;
+}
+
+.galleryJS.loading {
+    position: absolute;
+    left: -50000px;
+}
+
+.modal.galleryJS .modal-dialog {
+    box-shadow: none;
+    width: 70%;
+}
+
+.modal.galleryJS.fullscreen {
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+.modal.galleryJS.fullscreen .modal-dialog {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: black;
+    margin: 0px auto;
+    padding: 20px;
+    padding-top: 0px;
+}
+
+.modal.galleryJS.fullscreen .modal-content .modal-header {
+    bottom: 0px;
+    top: auto;
+}
+
+.modal.galleryJS .modal-content img {
+    width: 100%;
+}
+
+.modal.galleryJS .controls {
+    position: absolute;
+    display: block;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+}
+
+.modal.galleryJS .controls .prev, .modal.galleryJS .controls .next {
+    display: block;
+    width: 20%;
+    height: 100%;
+}
+
+.modal.galleryJS .controls .prev {
+    float: left;
+}
+
+.modal.galleryJS .controls .next {
+    float: right;
+}
+
+.modal.galleryJS .controls .prev:hover {
+    background: linear-gradient(to left, transparent, rgba(0,0,0,0.6));
+} 
+
+.modal.galleryJS .controls .next:hover {
+    background: linear-gradient(to right, transparent, rgba(0,0,0,0.6));
+}
+
+.modal.galleryJS [type=button].fullscreen {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    float: right;
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+    margin-right: 5px;
+    color: white;
+    opacity: .6;
+}
+
+.modal.galleryJS [type=button].close {
+    color: white;
+    opacity: .6;
+}
+
+.modal.galleryJS [type=button].close:hover, .modal-galleryjs [type=button].fullscreen:hover {
+    opacity: 1;
+}
+
+.modal.galleryJS .modal-content {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    min-height: 200px;
+}
+
+.modal.galleryJS .modal-content .modal-header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 9999;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+}

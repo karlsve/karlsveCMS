@@ -17,6 +17,8 @@
                     <ul class="dropdown-menu">
                         <li><a href="?page=league">League of Legends</a></li>
                         <li><a href="?page=math">Math</a></li>
+                        <li><a href="?page=galleryjs">GalleryJS</a></li>
+                        <li><a href="?page=ogame">OGame</a></li>
                     </ul>
                 </li>
             </ul>
