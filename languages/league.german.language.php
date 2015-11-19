@@ -2,7 +2,7 @@
 
 $league_german = array(
     'summonerstats' => 'Stats',
-    'disclaimer_text' => 'Diese Webseite hat keine Verbindung zu Riot Games und repräsentiert nicht die Meinung von Riot Games oder deren Mitarbeiter. League of Legends und Riot Games sind eingetragene Marken von Riot Games, Inc. League of Legends © Riot Games, Inc. Diese Daten sind Resultate der Riot Games API.',
+    'disclaimer_text' => 'Diese Webseite hat keine Verbindung zu Riot Games und repräsentiert nicht die Meinung von Riot Games oder deren Mitarbeiter. League of Legends und Riot Games sind eingetragene Marken von Riot Games, Inc. League of Legends © Riot Games, Inc.',
     'disclaimer_title' => 'Haftungsausschluss',
     'totalChampionKills' => 'Σ Heldentötungen',
     'totalMinionKills' => 'Σ Vasallentötungen',
@@ -46,7 +46,8 @@ $league_german = array(
     'CAP5x5' => 'CAP 5x5',
     'URF' => 'Ultra Rapid Fire (URF)',
     'AramUnranked5x5' => 'ARAM',
-    'Unranked' => 'Unranked'
+    'Unranked' => 'Unranked',
+    'OneForAll5x5' => 'One for All'
 );
 
 components\language\Language::addLanguage('de', $league_german);
