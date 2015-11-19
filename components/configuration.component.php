@@ -30,8 +30,6 @@ namespace components\configuration {
 
         public abstract function load();
 
-        public abstract function save();
-
         public function getFile() {
             return $this->file;
         }
@@ -40,13 +38,13 @@ namespace components\configuration {
             return $this->data;
         }
 
-        public function has($key) {
-            return key_exists($key, $this->data);
+        public function has($section, $key) {
+            return key_exists($section, $this->data) ? key_exists($key, $this->data[$section]) : false;
         }
 
-        public function get($key, $default = '') {
-            if ($this->has($key)) {
-                return $this->data[$key];
+        public function get($section, $key, $default = '') {
+            if ($this->has($section, $key)) {
+                return $this->data[$section][$key];
             }
             return $default;
         }
@@ -56,28 +54,7 @@ namespace components\configuration {
     class BasicConfiguration extends AbstractConfiguration {
 
         public function load() {
-            $data = array();
-            $handle = \fopen($this->getFile(), 'r');
-            while (($line = fgets($handle)) !== false) {
-                $pieces = explode('=', $line);
-                if (count($pieces) == 2) {
-                    $key = $pieces[0];
-                    $value = $pieces[1];
-                    $data[$key] = $value;
-                }
-            }
-            \fclose($handle);
-            return $data;
-        }
-
-        public function save() {
-            $data = $this->getData();
-            $handle = \fopen($this->getFile(), 'w');
-            foreach ($data as $key => $value) {
-                $line = sprintf('%s=%s\n', $key, $value);
-                fwrite($handle, $line);
-            }
-            \fclose($handle);
+            return parse_ini_file($this->getFile(), true);
         }
 
     }
