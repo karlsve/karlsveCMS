@@ -9,7 +9,7 @@ $league_english = array(
     'gameType' => 'Game Type',
     'subType' => 'Sub Type',
     'disclaimer_title' => 'Disclaimer',
-    'disclaimer_text' => 'This website isn\'t endorsed by Riot Games and doesn\'t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc. These stats are obtained from Riot Games API.',
+    'disclaimer_text' => 'This website isn\'t endorsed by Riot Games and doesn\'t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.',
     'totalChampionKills' => 'Σ Champion Kills',
     'totalMinionKills' => 'Σ Minion Kills',
     'totalTurretsKilled' => 'Σ Turrets Destroyed',
@@ -52,7 +52,8 @@ $league_english = array(
     'CAP5x5' => 'CAP 5x5',
     'URF' => 'Ultra Rapid Fire (URF)',
     'AramUnranked5x5' => 'ARAM',
-    'Unranked' => 'Unranked'
+    'Unranked' => 'Unranked',
+    'OneForAll5x5' => 'One for All'
 );
 
 components\language\Language::addLanguage('en', $league_english);
